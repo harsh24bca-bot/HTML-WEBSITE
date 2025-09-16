@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Amour - Home</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('file:///C:/Users/piyus/OneDrive/Documents/WP%20Project(1)/homepage_img.jpg') no-repeat center center/cover;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ff6600;
+            padding: 15px 50px;
+        }
+
+        .logo img {
+            width: 120px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('banner.jpg') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: black;
+            flex-direction: column;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: white;
+            background-color: #ff6600;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #e65c00;
+        }
+
+        /* Hidden Sections */
+        .hidden-section {
+            display: none;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            border-radius: 8px;
+        }
+
+        /* Login Form */
+        .login-container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .login-container h2 {
+            text-align: center;
+        }
+
+        .login-container label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-container button {
+            width: 100%;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .login-container button:hover {
+            background-color: #e65c00;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="file:///C:/Users/piyus/OneDrive/Documents/WP%20Project(1)/logo1_img.png" alt="Café Amour Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a onclick="toggleSection('menu')">Menu</a></li>
+                <li><a onclick="toggleSection('order')">Order</a></li>
+                <li><a onclick="toggleSection('contact')">Contact</a></li>
+                <li><a onclick="toggleSection('login')">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to Café Amour</h1>
+        <p>Your favorite spot for delicious food, fast delivery, and unbeatable taste.</p>
+        <button class="btn" onclick="toggleSection('menu')">View Menu</button>
+    </section>
+
+    <!-- Menu Section -->
+<section class="hidden-section" id="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-grid">
+        
+        <div class="menu-category">
+            <h3>Pizzas</h3>
+            <table>
+                <tr><th>Item</th><th>Price</th></tr>
+                <tr><td>Margherita</td><td>₹195</td></tr>
+                <tr><td>Chicken Margherita</td><td>₹305</td></tr>
+                <tr><td>Veg Extravaganza</td><td>₹395</td></tr>
+                <tr><td>Chicken Extravaganza</td><td>₹495</td></tr>
+                <tr><td>Pepperoni</td><td>₹395</td></tr>
+                <tr><td>Chicken Sausage</td><td>₹445</td></tr>
+                <tr><td>Veg Peppy Paneer</td><td>₹249</td></tr>
+                <tr><td>Veg Farmhouse</td><td>₹259</td></tr>
+                <tr><td>Veggie Paradise</td><td>₹259</td></tr>
+                <tr><td>Veg Indi Tandoori Paneer</td><td>₹299</td></tr>
+                <tr><td>Veg Cheese n Corn</td><td>₹189</td></tr>
+            </table>
+        </div>
+
+        <div class="menu-category">
+            <h3>Pasta</h3>
+            <table>
+                <tr><th>Item</th><th>Price</th></tr>
+                <tr><td>Veg Pasta</td><td>₹179</td></tr>
+                <tr><td>Chicken Pasta</td><td>₹229</td></tr>
+                <tr><td>Alfredo Pasta</td><td>₹174</td></tr>
+                <tr><td>Rosa Pasta</td><td>₹174</td></tr>
+                <tr><td>Arrabiata Pasta</td><td>₹249</td></tr>
+                <tr><td>Indi Pasta</td><td>₹249</td></tr>
+                <tr><td>Chicken Alfredo Pasta</td><td>₹249</td></tr>
+            </table>
+        </div>
+
+        <div class="menu-category">
+            <h3>Sides</h3>
+            <table>
+                <tr><th>Item</th><th>Price</th></tr>
+                <tr><td>Garlic Bread</td><td>₹99</td></tr>
+                <tr><td>Stuffed Garlic Bread</td><td>₹149</td></tr>
+                <tr><td>Chicken Wings</td><td>₹199</td></tr>
+                <tr><td>Potato Wedges</td><td>₹149</td></tr>
+                <tr><td>Veg Parcel</td><td>₹49</td></tr>
+                <tr><td>Taco Mexican Veg</td><td>₹129</td></tr>
+            </table>
+        </div>
+	
+	 <div class="menu-category">
+            <h3>Drinks</h3>
+            <table>
+                <tr><th>Item</th><th>Price</th></tr>
+                <tr><td>Pepsi</td><td>₹49</td></tr>
+                <tr><td>Coke</td><td>₹49</td></tr>
+                <tr><td>Iced Tea</td><td>₹49</td></tr>
+                <tr><td>Bisleri Water</td><td>₹20</td></tr>
+                <tr><td>Berry Lemonade</td><td>₹139</td></tr>
+                <tr><td>Mocha Frappe</td><td>₹279</td></tr>
+                <tr><td>Mixed Berry Smoothie</td><td>₹199</td></tr>
+            </table>
+        </div>
+
+        <div class="menu-category">
+            <h3>Desserts</h3>
+            <table>
+                <tr><th>Item</th><th>Price</th></tr>
+                <tr><td>Chocolate Lava Cake</td><td>₹149</td></tr>
+                <tr><td>Butterscotch Mousse Cake</td><td>₹149</td></tr>
+                <tr><td>Red Velvet Lava Cake</td><td>₹149</td></tr>
+                <tr><td>Brownie</td><td>₹139</td></tr>
+                <tr><td>Special Ice Cream</td><td>₹149</td></tr>
+            </table>
+        </div>
+       </div>
+</section>
+
+<!-- CSS Styling -->
+<style>
+    .menu-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+    }
+
+    .menu-category {
+        flex-basis: 45%; /* Adjust width to fit 2 tables per row */
+        background: #f8f8f8;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f4a261;
+        color: white;
+    }
+</style>
+
+
+<!-- Order Section -->
+<section class="hidden-section" id="order">
+    <h2>Menu</h2>
+    <div class="menu-grid">
+        
+        <div class="menu-category">
+            <h3>Pizzas</h3>
+            <table>
+                <tr><th>Select</th><th>Item</th><th>Price</th></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="195" data-name="Margherita"></td><td>Margherita</td><td>₹195</td></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="305" data-name="Chicken Margherita"></td><td>Chicken Margherita</td><td>₹305</td></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="395" data-name="Veg Extravaganza"></td><td>Veg Extravaganza</td><td>₹395</td></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="495" data-name="Chicken Extravaganza"></td><td>Chicken Extravaganza</td><td>₹495</td></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="395" data-name="Pepperoni"></td><td>Pepperoni</td><td>₹395</td></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="445" data-name="Chicken Sausage"></td><td>Chicken Sausage</td><td>₹445</td></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="249" data-name="Veg Peppy Paneer"></td><td>Veg Peppy Paneer</td><td>₹249</td></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="259" data-name="Veg Farmhouse"></td><td>Veg Farmhouse</td><td>₹259</td></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="259" data-name="Veggie Paradise"></td><td>Veggie Paradise</td><td>₹259</td></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="299" data-name="Veg Indi Tandoori Paneer"></td><td>Veg Indi Tandoori Paneer</td><td>₹299</td></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="189" data-name="Veg Cheese n Corn"></td><td>Veg Cheese n Corn</td><td>₹189</td></tr>
+            </table>
+        </div>
+
+        <div class="menu-category">
+            <h3>Pasta</h3>
+            <table>
+                <tr><th>Select</th><th>Item</th><th>Price</th></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="179" data-name="Veg Pasta"></td><td>Veg Pasta</td><td>₹179</td></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="229" data-name="Chicken Pasta"></td><td>Chicken Pasta</td><td>₹229</td></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="174" data-name="Alfredo Pasta"></td><td>Alfredo Pasta</td><td>₹174</td></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="174" data-name="Rosa Pasta"></td><td>Rosa Pasta</td><td>₹174</td></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="249" data-name="Arrabiata Pasta"></td><td>Arrabiata Pasta</td><td>₹249</td></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="249" data-name="Indi Pasta"></td><td>Indi Pasta</td><td>₹249</td></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="249" data-name="Chicken Alfredo Pasta"></td><td>Chicken Alfredo Pasta</td><td>₹249</td></tr>
+            </table>
+        </div>
+
+        <div class="menu-category">
+            <h3>Sides</h3>
+            <table>
+                <tr><th>Select</th><th>Item</th><th>Price</th></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="99" data-name="Garlic Bread"></td><td>Garlic Bread</td><td>₹99</td></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="149" data-name="Stuffed Garlic Bread"></td><td>Stuffed Garlic Bread</td><td>₹149</td></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="199" data-name="Chicken Wings"></td><td>Chicken Wings</td><td>₹199</td></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="149" data-name="Potato Wedges"></td><td>Potato Wedges</td><td>₹149</td></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="49" data-name="Veg Parcel"></td><td>Veg Parcel</td><td>₹49</td></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="129" data-name="Taco Mexican Veg"></td><td>Taco Mexican Veg</td><td>₹129</td></tr>
+            </table>
+        </div>
+
+	 
+
+	<div class="menu-category">
+            <h3>Drinks</h3>
+            <table>
+                <tr><th>Select</th><th>Item</th><th>Price</th></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="49" data-name="Pepsi"></td><td>Pepsi</td><td>₹49</td></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="49" data-name="Coke"></td><td>Coke</td><td>₹49</td></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="49" data-name="Iced Tea"></td><td>Iced Tea</td><td>₹49</td></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="20" data-name="Bisleri Water"></td><td>Bisleri Water</td><td>₹20</td></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="139" data-name="Berry Lemonade"></td><td>Berry Lemonade</td><td>₹139</td></tr>
+		<tr><td><input type="checkbox" class="menu-item" value="279" data-name="Mocha Frappe"></td><td>Mocha Frappe</td><td>₹279</td></tr>
+		<tr><td><input type="checkbox" class="menu-item" value="199" data-name="Mixed Berry Smoothie"></td><td>Mixed Berry Smoothie</td><td>₹199</td></tr>
+	    </table>
+        </div>
+
+	<div class="menu-category">
+            <h3>Desserts</h3>
+            <table>
+                <tr><th>Select</th><th>Item</th><th>Price</th></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="149" data-name="Chocolate Lava Cake"></td><td>Chocolate Lava Cake</td><td>₹149</td></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="149" data-name="Butterscotch Mousse Cake"></td><td>Butterscotch Mousse Cake</td><td>₹149</td></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="149" data-name="Red Velvet Lava Cake"></td><td>Red Velvet Lava Cake</td><td>₹149</td></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="139" data-name="Brownie"></td><td>Brownie</td><td>₹139</td></tr>
+                <tr><td><input type="checkbox" class="menu-item" value="149" data-name="Special Ice Cream"></td><td>Special Ice Cream</td><td>₹149</td></tr>
+            </table>
+        </div>
+       </div>
+	<p><h1>Total Price: <span id="total-price">₹0</span></h1></p>
+
+	<button type="submit"style="font-size: 20px; padding: 15px 30px; background-color: green; color: white; border: none; border-radius: 5px; cursor: pointer;">
+    Place Order
+</button>
+
+</section>
+
+<script>
+    document.querySelectorAll(".menu-item").forEach(item => {
+        item.addEventListener("change", () => {
+            let total = 0;
+            document.querySelectorAll(".menu-item:checked").forEach(checkedItem => {
+                total += parseInt(checkedItem.value);
+            });
+            document.getElementById("total-price").textContent = "₹" + total;
+        });
+    });
+	
+</script>
+
+    <!-- Login Section -->
+    <section class="hidden-section" id="login">
+        <div class="login-container">
+            <h2>Login</h2>
+            <form>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="hidden-section" id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: contact@bingbongjoint.com</p>
+        <p>Phone: +91 98765 43210</p>
+        <p>Address: 123 Food Street, Mumbai, India</p>
+    </section>
+
+    <footer>
+        <p>© 2025 Café Amour. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleSection(sectionId) {
+            document.querySelectorAll(".hidden-section").forEach(section => section.style.display = "none");
+            document.getElementById(sectionId).style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
